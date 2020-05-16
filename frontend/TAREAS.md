@@ -1,7 +1,7 @@
 
 Hola gente, vamos muy bien hasta el momento, ya tenemos un primer panatallado de lo que sería nuestra app.
 
-Gracias a @JennAlava y @LucasChapa por su tarea en Figma.
+Gracias a @JennAlava y @LucasFernandez por su tarea en Figma.
 
 
 Esto nos permite seguir con el desarrollo de la siguiente manera:
