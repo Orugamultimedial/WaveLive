@@ -16,8 +16,6 @@ Las funciones principales que serán necesarias son:
 
 * Filtrar resultados de canciones por comodines en la db
 
-* Recuperar una canción desde la DB.
-
 * enviar cancion a la lista seleciionada por el usuario con el botón agregar.
 
 * reproducir la cancion (y todos los botones de stop, pause, etc).
@@ -44,8 +42,17 @@ Las funciones principales que serán necesarias son:
 
 * bajar musica al 15% cuando el microfono esté activo
 
-* sleccionar la funte de entrada de microfono.
+* seleccionar la funte de entrada de microfono.
 
 * guardar FX con nombre en cada casillero
 
+***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/ FUNCIONES EN PROCESO /**********************************************************************************
 
+
+* Recuperar una canción desde la DB. ******************** LISTA
+
+{ Se creó la db y se la vinculó al index_de_pruebas.php para que pueda recuperar los resultados y mostrarlos en una lista en el reproductor de audio
+  Se crea la estructura y las funciones para una lista de reproducción.
+  Falta agregar que se reproduzca automaticamente la siguiente canción.
+  Falta agregar botones de STOP, PAUSE, PREVIEW y NEXT
+}
