@@ -4,9 +4,23 @@ function init(){
   var audio = document.getElementById('audio');
   var playlist = document.getElementById('playlist');
   var tracks = playlist.getElementsByTagName('a');
+  var playbtn = document.getElementById("playPausebtn");
+  var stopbtn = document.getElementById("stopbtn");
+  var prevbtn = document.getElementById("prevbtn");
+  var nextbtn = document.getElementById("nextbtn");
   audio.volume = 0.10;
   audio.play();
   
+  playbtn.addEventListener("click", function playPause() {
+    if (audio.paused) {
+      audio.play();
+      playbtn.style.background = "url(../asset/icons/pause_button_active.png)";
+    } else {
+      audio.pause();
+      playbtn.style.background = "url(../asset/icons/play_button_active.png)";
+    }
+  })
+
   //Agregamos los eventos a los links que nos permitirán cambiar de canción
   for(var track in tracks) {
     var link = tracks[track];
@@ -39,6 +53,13 @@ function run(song, audio, link){
       audio.play();
 }
 
+//esta funciòn es para detectar el id del elemento donde se hizo click, la dejo para más adelante
+/*
+          function zoom(ele) {
+              var id = ele.id;
+              //id.classList.add("active");
+              //var d = document.getElementById("div1");
+              id.className += "active";
 
 
 /***REPRODUCTOR LIVE***/

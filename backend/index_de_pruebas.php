@@ -58,6 +58,15 @@ $theme = traerMusica($connect);
         <ul id="playlistVIVO"></ul>
     </div>
 
+    <!--Botones de Reproduccion-->
+    <div>
+        <button type="button" id="playPausebtn"></button>
+        <button type="button" id="stopbtn"></button>
+        <button type="button" id="prevbtn"></button>
+        <button type="button" id="nextbtn"></button>
+    </div>
+
+
 
 </body>
 
