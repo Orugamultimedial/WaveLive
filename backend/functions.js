@@ -1,3 +1,5 @@
+
+/****REPRODUCTOR PREVIO***/
 function init(){
   var audio = document.getElementById('audio');
   var playlist = document.getElementById('playlist');
@@ -39,15 +41,62 @@ function run(song, audio, link){
 
 
 
-//esta funciòn es para detectar el id del elemento donde se hizo click, la dejo para más adelante
-/*
-          function zoom(ele) {
-              var id = ele.id;
-              //id.classList.add("active");
-              //var d = document.getElementById("div1");
-              id.className += "active";
+/***REPRODUCTOR LIVE***/
+// HAY QUE CREAR ESTA FUNCIÓN
 
-              console.log('area element id = ' + id);
-          }
 
-*/
+
+///****ENVIAR A LA LISTA VIVO****/
+
+function addVIVO(ele) {
+  //detecta el id del elemento clickeado
+  var id = ele.id;
+  var elm = document.getElementsByClassName(id);
+  var cancion = elm[0];
+  var url = cancion.getAttribute('href');
+  var name = cancion.getAttribute('name');
+  console.log(url);
+  console.log(name);
+  addElement(url, name);
+}
+
+function removeVIVO(elID){
+  //detecta el id del elemento clickeado
+  var idSong = elID.id;
+  var seVaAEliminar = document.getElementsByClassName(idSong);
+  var cancion = seVaAEliminar[0];
+  console.log(cancion);
+  cancion.remove(cancion);
+}
+
+function addElement (url, name) { 
+      // añade a la lista VIVO
+
+      // y añade contenido 
+      var listVIVO = document.getElementById('playlistVIVO');
+      var lista = document.createElement('li');
+          lista.setAttribute('class',name);
+          
+
+      listVIVO.appendChild(lista);
+      
+      var newSong = document.createElement("a");
+          newSong.setAttribute('href', url); 
+
+      var newContent = document.createTextNode(name); 
+          newSong.appendChild(newContent); //añade texto al div creado. 
+
+      var newButton = document.createElement('button');
+      
+          newButton.setAttribute('onclick','removeVIVO(this)');
+          newButton.setAttribute('value','X');
+          newButton.setAttribute('id',name);
+
+          var newContentButton = document.createTextNode('Eliminar');
+          newButton.appendChild(newContentButton); //añade texto al botón creado.
+
+      lista.appendChild(newButton);
+
+      lista.appendChild(newSong);      
+
+  }

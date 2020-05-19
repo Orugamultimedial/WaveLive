@@ -24,7 +24,7 @@ Las funciones principales que serán necesarias son:
 
 * poder seleccionar la salida de audio en el reproductor previo y en el reproductor Vivo.
 
-* agregar audio desde las listas de previo a la lista en vivo
+
 
 * controles de reproduccion de la lista VIVO
 
@@ -49,10 +49,15 @@ Las funciones principales que serán necesarias son:
 ***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/ FUNCIONES EN PROCESO /**********************************************************************************
 
 
-* Recuperar una canción desde la DB. ******************** LISTA
+* Recuperar una canción desde la DB. ******************** LISTA @Orugamultimedial
 
 { Se creó la db y se la vinculó al index_de_pruebas.php para que pueda recuperar los resultados y mostrarlos en una lista en el reproductor de audio
   Se crea la estructura y las funciones para una lista de reproducción.
   Falta agregar que se reproduzca automaticamente la siguiente canción.
   Falta agregar botones de STOP, PAUSE, PREVIEW y NEXT
+}
+
+* agregar audio desde las listas de previo a la lista en vivo. ****************** LISTA @Orugamultimedial
+{ Se agrega la funci{ón para enviar música desde la lista de reproducción PREVIO a la lista de reproducción VIVO.
+  Se agrega la función para que la música se eliminar de la lista de reproducción vivo.
 }
