@@ -1,27 +1,30 @@
-*{
-    margin: 0;
-}
-body{
-    background: black;
-    margin:0;
-    
-}
+
 .content{
     background: black;
+    display:flex;
+    background-size: cover;
 }
 .content div{
-    margin: 5px;
+    margin: 2px;
     border-radius: 10px;
 }
-header{
+.header{
     text-align: center;
     height:10vh;
-    width:80vw;
-    background-image: linear-gradient(to right bottom, #1f2c0e, #2b2300, #331900, #370c02, #340214);
+    width: 100vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right bottom, #be1b94, #901966, #61173f, #331220, #000000);
+}
+h4{
+    color:white;
 }
 h1{
     color: white;
     float:left;
+    position: relative;
+    right: 300px;
 }
 input{
     width: 350px;
@@ -34,12 +37,12 @@ input{
 .main-left{
     width: 65vw;
     height: 40vh;
-    background-image: linear-gradient(to right bottom, #aeae4d, #a27a33, #874b28, #602220, #340214);
+    background-image: linear-gradient(to right bottom, #b9b7b1, #898582, #5a5756, #2f2d2d, #000000);
 }
 .main-right{
     width:15vw;
     height:40vh;
-    background-image: linear-gradient(to right bottom, #aeae4d, #bb8f30, #c46c29, #c54434, #bb0748);
+    background-image: linear-gradient(to right bottom, #b9b7b1, #898582, #5a5756, #2f2d2d, #000000);
 }
 .content-cortinas{
     background: pink;
@@ -62,6 +65,6 @@ input{
 
 .content-right{
     width: 20vw;
-    height: 100vh;
+    height: 95vh;
     background: orange;
 }
