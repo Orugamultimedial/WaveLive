@@ -1,13 +1,22 @@
 
 /****REPRODUCTOR PREVIO***/
 function init(){
+  var i = 0;
   var audio = document.getElementById('audio');
   var playlist = document.getElementById('playlist');
   var tracks = playlist.getElementsByTagName('a');
   var playbtn = document.getElementById("playPausebtn");
-  var stopbtn = document.getElementById("stopbtn");
-  var prevbtn = document.getElementById("prevbtn");
-  var nextbtn = document.getElementById("nextbtn");
+  document.getElementById("stopbtn").onclick = function () {audio.load()};
+  document.getElementById("prevbtn").onclick = function () {
+    i--;
+    var prev = tracks[i];
+    console.log(prev);
+  };
+  document.getElementById("nextbtn").onclick = function () {
+    i++;
+    var next = tracks[i];
+    console.log(next);
+  };
   audio.volume = 0.10;
   audio.play();
   
@@ -32,6 +41,10 @@ function init(){
     });
   }
   // aca me falta agregar que pase a la siguiente canción el terminar
+  audio.addEventListener("ended", function() {
+    setTimeout(function() {audio.play()}, 500);
+   },false);
+   audio.play();
 }
 
 
