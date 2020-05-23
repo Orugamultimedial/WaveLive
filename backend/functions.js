@@ -1,34 +1,15 @@
 
 /****REPRODUCTOR PREVIO***/
 function init(){
-  var i = 0;
+  var i = 1;
   var audio = document.getElementById('audio');
   var playlist = document.getElementById('playlist');
   var tracks = playlist.getElementsByTagName('a');
-  var playbtn = document.getElementById("playPausebtn");
-  document.getElementById("stopbtn").onclick = function () {audio.load()};
-  document.getElementById("prevbtn").onclick = function () {
-    i--;
-    var prev = tracks[i];
-    console.log(prev);
-  };
-  document.getElementById("nextbtn").onclick = function () {
-    i++;
-    var next = tracks[i];
-    console.log(next);
-  };
+  var link = 1;
+
   audio.volume = 0.10;
   audio.play();
-  
-  playbtn.addEventListener("click", function playPause() {
-    if (audio.paused) {
-      audio.play();
-      playbtn.style.background = "url(../asset/icons/pause_button_active.png)";
-    } else {
-      audio.pause();
-      playbtn.style.background = "url(../asset/icons/play_button_active.png)";
-    }
-  })
+ 
 
   //Agregamos los eventos a los links que nos permitirán cambiar de canción
   for(var track in tracks) {
@@ -40,14 +21,69 @@ function init(){
      run(song, audio, this);
     });
   }
-  // aca me falta agregar que pase a la siguiente canción el terminar
-  audio.addEventListener("ended", function() {
-    setTimeout(function() {audio.play()}, 500);
-   },false);
-   audio.play();
+
+  // pasa a la siguiente canción el terminar
+  audio.addEventListener("ended", function siguiente() {
+    if(audio.ended === true){
+      i++;
+      var nextSong = tracks[i];
+      console.log(nextSong);
+      var song = nextSong.getAttribute('href');
+      run(song, audio, nextSong);
+    }
+  });
+
+
+
+  //Funcionalidad de los botones
+  //play-pause
+  var playbtn = document.getElementById("playPausebtn");
+
+  playbtn.addEventListener("click", function playPause() {
+    if (audio.paused) {
+      audio.play();
+      playbtn.style.background = "url(../asset/icons/pause.png)";
+    } else {
+      audio.pause();
+      playbtn.style.background = "url(../asset/icons/play.png)";
+    }
+  });
+
+  //stop
+  var stopbtn = document.getElementById("stopbtn");
+
+  stopbtn.addEventListener("click", function stop() {
+    audio.load();
+    playbtn.style.background = "url(../asset/icons/play.png)";
+  });
+
+
+
+  //prev
+  document.getElementById("prevbtn").onclick = function () {
+    i--;
+    var prev = tracks[i];
+    console.log(prev);
+    var song = prev.getAttribute('href');
+     run(song, audio, prev);
+  };
+
+  //next
+  document.getElementById("nextbtn").onclick = function () {
+      i++;
+      var next = tracks[i];
+      console.log(next);
+      var song = next.getAttribute('href');
+      run(song, audio, next);
+  };
+
+
+  
+
+
 }
 
-
+// FUNCION PARA REPRODUCIR EL AUDIO
 function run(song, audio, link){
       var parent = link.parentElement;
       //quitar el active de todos los elementos de la lista

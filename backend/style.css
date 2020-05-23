@@ -11,24 +11,24 @@
     outline: none;
   }
   #playPausebtn{
-    background: url(../asset/icons/pause_button_active.png);
-    width: 256px;
-    height: 256px;
+    background: url(../asset/icons/pause.png);
+    width: 35px;
+    height: 35px;
   }
   #stopbtn{
-    background: url(../asset/icons/stop_button_active.png);
-    width: 256px;
-    height: 256px;
+    background: url(../asset/icons/stop.png);
+    width: 35px;
+    height: 35px;
   }
   #prevbtn{
-    background: url(../asset/icons/preview_button_active.png);
-    width: 256px;
-    height: 256px;
+    background: url(../asset/icons/preview.png);
+    width: 35px;
+    height: 35px;
   }
   #nextbtn{
-    background: url(../asset/icons/next_button_active.png);
-    width: 256px;
-    height: 256px;
+    background: url(../asset/icons/next.png);
+    width: 35px;
+    height: 35px;
   }
   #seekslider{
     width: 100px;

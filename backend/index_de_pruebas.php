@@ -47,7 +47,7 @@ $theme = traerMusica($connect);
             ?>
         </ul>
             <audio id="audio" preload="auto" tabindex="0" controls >
-                <source src="../asset/music/canon_in_d-pachelbel.mp3">
+                <source src="">
             </audio-->
     </div>
 
