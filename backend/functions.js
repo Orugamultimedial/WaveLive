@@ -1,11 +1,22 @@
 
 /****REPRODUCTOR PREVIO***/
 function init(){
-  var i = 1;
+  var i = 0;
   var audio = document.getElementById('audio');
   var playlist = document.getElementById('playlist');
   var tracks = playlist.getElementsByTagName('a');
-  var link = 1;
+
+ 
+
+  //reproduce automaticamente la primera canción de la lista
+  firstSong = document.getElementsByTagName('a')[0];
+  first = firstSong.getAttribute('href');
+  firstActive = firstSong.parentElement;
+  firstActive.classList.add("active");
+  audio.src = first;
+
+  
+  
 
   audio.volume = 0.10;
   audio.play();

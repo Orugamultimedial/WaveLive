@@ -46,18 +46,10 @@ $theme = traerMusica($connect);
             }
             ?>
         </ul>
-            <audio id="audio" preload="auto" tabindex="0" controls >
+            <audio id="audio" preload="auto" tabindex="0" controls>
                 <source src="">
             </audio-->
     </div>
-
-
-    <!--REPRODUCTOR VIVO-->
-    <div id='container_playlistvivo'>
-        <h3>Lista VIVO</h3>
-        <ul id="playlistVIVO"></ul>
-    </div>
-
     <!--Botones de Reproduccion-->
     <div>
         <button type="button" id="playPausebtn"></button>
@@ -66,6 +58,11 @@ $theme = traerMusica($connect);
         <button type="button" id="nextbtn"></button>
     </div>
 
+    <!--REPRODUCTOR VIVO-->
+    <div id='container_playlistvivo'>
+        <h3>Lista VIVO</h3>
+        <ul id="playlistVIVO"></ul>
+    </div>
 
 
 </body>
