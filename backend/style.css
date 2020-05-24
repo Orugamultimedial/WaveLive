@@ -52,6 +52,31 @@
   li a:hover{
     text-decoration:none;
   }
+
+
+
+  /************LIVE*************/
+
+  #playPausebtnLIVE{
+    background: url(../asset/icons/pause.png);
+    width: 35px;
+    height: 35px;
+  }
+  #stopbtnLIVE{
+    background: url(../asset/icons/stop.png);
+    width: 35px;
+    height: 35px;
+  }
+  #prevbtnLIVE{
+    background: url(../asset/icons/preview.png);
+    width: 35px;
+    height: 35px;
+  }
+  #nextbtnLIVE{
+    background: url(../asset/icons/next.png);
+    width: 35px;
+    height: 35px;
+  }
 /************************/
   #playlistVIVO, #audioVIVO{
     background:#666;

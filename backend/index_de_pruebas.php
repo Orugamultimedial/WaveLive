@@ -11,7 +11,8 @@ $theme = traerMusica($connect);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="functions.js"></script>
+    
+    <script src="functionsPREV.js"></script>
 
 
     <title>funciones</title>
@@ -46,10 +47,13 @@ $theme = traerMusica($connect);
             }
             ?>
         </ul>
-            <audio id="audio" preload="auto" tabindex="0" controls>
+            <audio id="audio" preload="metadata" tabindex="0" controls>
                 <source src="">
-            </audio-->
+            </audio-->     
     </div>
+
+    <div id="waveform"></div>
+
     <!--Botones de Reproduccion-->
     <div>
         <button type="button" id="playPausebtn"></button>
@@ -59,13 +63,23 @@ $theme = traerMusica($connect);
     </div>
 
     <!--REPRODUCTOR VIVO-->
-    <div id='container_playlistvivo'>
+    <div id='container_playlistLIVE'>
         <h3>Lista VIVO</h3>
-        <ul id="playlistVIVO"></ul>
+        <ul id="playlistLIVE"></ul>
+    </div>
+
+
+    <div>
+        <button type="button" id="playPausebtnLIVE"></button>
+        <button type="button" id="stopbtnLIVE"></button>
+        <button type="button" id="prevbtnLIVE"></button>
+        <button type="button" id="nextbtnLIVE"></button>
     </div>
 
 
 </body>
 
-
-<script>init();</script>
+<script src="https://unpkg.com/wavesurfer.js"></script>
+<script>
+    PREV();
+</script>

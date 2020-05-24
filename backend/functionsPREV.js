@@ -1,6 +1,6 @@
 
 /****REPRODUCTOR PREVIO***/
-function init(){
+function PREV(){
   var i = 0;
   var audio = document.getElementById('audio');
   var playlist = document.getElementById('playlist');
@@ -54,9 +54,11 @@ function init(){
     if (audio.paused) {
       audio.play();
       playbtn.style.background = "url(../asset/icons/pause.png)";
+      
     } else {
       audio.pause();
       playbtn.style.background = "url(../asset/icons/play.png)";
+      
     }
   });
 
@@ -66,6 +68,7 @@ function init(){
   stopbtn.addEventListener("click", function stop() {
     audio.load();
     playbtn.style.background = "url(../asset/icons/play.png)";
+    
   });
 
 
@@ -154,7 +157,7 @@ function addElement (url, name) {
       // añade a la lista VIVO
 
       // y añade contenido 
-      var listVIVO = document.getElementById('playlistVIVO');
+      var listVIVO = document.getElementById('playlistLIVE');
       var lista = document.createElement('li');
           lista.setAttribute('class',name);
           
@@ -181,3 +184,6 @@ function addElement (url, name) {
       lista.appendChild(newSong);      
 
   }
+
+
+
