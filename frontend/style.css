@@ -1,13 +1,7 @@
-
-.content{
-    background: black;
-    display:flex;
-    background-size: cover;
+body{
+    background-color: black;
 }
-.content div{
-    margin: 2px;
-    border-radius: 10px;
-}
+/**********HEADER***********/
 .header{
     text-align: center;
     height:10vh;
@@ -24,47 +18,167 @@ h1{
     color: white;
     float:left;
     position: relative;
-    right: 300px;
+    right: 250px;
 }
 input{
-    width: 350px;
+    width: 300px;
     border-radius: 30px;
     text-align: center;
 }
 .content-main{
     display:flex;
 }
-.main-left{
-    width: 65vw;
-    height: 40vh;
-    background-image: linear-gradient(to right bottom, #b9b7b1, #898582, #5a5756, #2f2d2d, #000000);
-}
-.main-right{
-    width:15vw;
-    height:40vh;
-    background-image: linear-gradient(to right bottom, #b9b7b1, #898582, #5a5756, #2f2d2d, #000000);
-}
-.content-cortinas{
-    background: pink;
-    width: 35vw;
-    height:30vh;
-}
-.content-artisticas{
-    width: 45vw;
-    height:30vh;
-    background: yellow;
-}
-.content-section{
-    display:flex;
-}
-.footer{
-    width: 80vw;
-    height: 20vh;
-    background: green;
+
+/****************************/
+
+/**********PREVIO***********/
+
+.PREVIO{
+    display: inline-flex;
+    width: 70%;
+    height: 582px;
+    box-sizing: content-box;
 }
 
-.content-right{
-    width: 20vw;
-    height: 95vh;
-    background: orange;
+#playlist{
+    background:#666;
+    width:100%;
+    padding:20px;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+#audio{
+    background:#666;
+    width:100%;
+    padding:20px;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+a button{
+    border-radius: 8px;
+}
+button{
+border: none;
+cursor: pointer;
+outline: none;
+}
+#playPausebtn{
+background: url(../asset/icons/pause.png);
+width: 35px;
+height: 35px;
+}
+#stopbtn{
+background: url(../asset/icons/stop.png);
+width: 35px;
+height: 35px;
+}
+#prevbtn{
+background: url(../asset/icons/preview.png);
+width: 35px;
+height: 35px;
+}
+#nextbtn{
+background: url(../asset/icons/next.png);
+width: 35px;
+height: 35px;
+}
+
+a {
+text-decoration:none;
+}
+.active a {
+color:rgb(12, 248, 83);
+text-decoration:none;
+}
+li a{
+width: 70%;
+color:#eeeedd;
+background:#333;
+padding:5px;
+display:block;
+}
+li a:hover{
+text-decoration:none;
+}
+
+
+.CORTINA{
+    width: 38%;
+}
+.ARTISTICA{
+    width: 38%;
+}
+
+
+
+/******MICROPHONE*********/
+.DIV-MICROPHONE{
+    width: 25%;
+    height: 580px;
+    float: right;
+    position: relative;
+    top:-606px;
+    background-color: teal;
+    text-align: center;
+}
+
+#microphone{
+  background: url(../asset/icons/microphone2.png);
+  width: 150px;
+  height: 150px;
+  margin-left: auto;
+  margin-left: auto;
+
+}
+
+/*******VIVO********/
+.VIVO{
+    width: 30%;
+    height: 580px;
+    float: right;
+    text-align: center;
+    background-image: linear-gradient(to top, #000000, #111010, #1c191a, #272323, #322c2c);
+
+}
+
+#vivo-text{
+    color: #c28194;
+}
+
+li{
+    width: 100%;
+    text-align: justify;
+}
+
+
+#playlistLIVE{
+    text-decoration: none;
+    font-size: 10px;
+}
+
+#playlistLIVE ul{
+    display: inline-flexbox;
+}
+
+#playlistLIVE button{
+    border-radius: 10px;
+    color: rgb(255, 251, 251);
+    background-color: rgb(189, 0, 0);
+}
+
+.button-vivo{
+    color: rgb(255, 251, 251);
+    background-color: green;
+    border: 1px solid rgb(5, 44, 17);
+}
+
+#div-content-previos2{
+    display:inline-flex;
+
+}
+
+#songLive{
+    display: inline-flexbox;
 }

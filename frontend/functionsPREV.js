@@ -160,6 +160,7 @@ function addElement (url, name) {
       var listVIVO = document.getElementById('playlistLIVE');
       var lista = document.createElement('li');
           lista.setAttribute('class',name);
+          
 
       listVIVO.appendChild(lista);
       
@@ -178,8 +179,11 @@ function addElement (url, name) {
           var newContentButton = document.createTextNode('Eliminar');
           newButton.appendChild(newContentButton); //añade texto al botón creado.
 
+      
+      lista.appendChild(newSong);
       lista.appendChild(newButton);
-      lista.appendChild(newSong);      
+
+            
 
   }
 

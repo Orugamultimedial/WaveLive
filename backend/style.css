@@ -53,7 +53,14 @@
     text-decoration:none;
   }
 
+#microphone{
+  background: url(../asset/icons/microphone2.png);
+  width: 150px;
+  height: 150px;
+  margin-left: auto;
+  margin-left: auto;
 
+}
 
   /************LIVE*************/
 
