@@ -183,5 +183,13 @@ function addElement (url, name) {
 
   }
 
+  var barra = document.getElementById('mislider');
+
+  barra.addEventListener(“change”,function(ev){…},true);
+
+  ev.currentTarget.value;
+
+  var reproductor = document.getElementById(“reproductor”);
+
 
 

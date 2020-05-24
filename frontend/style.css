@@ -36,17 +36,13 @@ input{
 .PREVIO{
     display: inline-flex;
     width: 70%;
-    height: 582px;
+    height: 580px;
     box-sizing: content-box;
+    background-image: linear-gradient(to top, #060707, #001115, #001723, #001b32, #021c3f);
+    
 }
 
-#playlist{
-    background:#666;
-    width:100%;
-    padding:20px;
-    list-style: none;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+
 
 #audio{
     background:#666;
@@ -54,6 +50,7 @@ input{
     padding:20px;
     list-style: none;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 8px;
   }
 
 a button{
@@ -119,7 +116,7 @@ text-decoration:none;
     height: 580px;
     float: right;
     position: relative;
-    top:-606px;
+    top:-526px;
     background-color: teal;
     text-align: center;
 }
@@ -181,4 +178,94 @@ li{
 
 #songLive{
     display: inline-flexbox;
+}
+
+
+
+/***********VOLUME**********/
+
+/*customised range*/ input[type="range"].range
+{
+    cursor: pointer;
+    width: 250px !important;
+    position: relative;
+    top:130px;
+    left: -5px;
+    -webkit-appearance: none;
+    z-index: 200;
+    height: 20px;
+    border: 1px solid #e6e6e6;
+    background-color: #e6e6e6;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e6e6e6), to(#d2d2d2));
+    background-image: -webkit-linear-gradient(right, #e6e6e6, #d2d2d2);
+    background-image: -moz-linear-gradient(right, #e6e6e6, #d2d2d2);
+    background-image: -ms-linear-gradient(right, #e6e6e6, #d2d2d2);
+    background-image: -o-linear-gradient(right, #e6e6e6, #d2d2d2);
+}
+
+/*customised range when focusing on input */ input[type="range"].range:focus
+{
+    border: 0 !imporant;
+outline: none !important;
+}
+
+/*customised range slider icon*/ input[type="range"].range::-webkit-slider-thumb
+{
+    -webkit-appearance: none;
+    width: 10px;
+    height: 20px;
+background-color: #555;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4DDBFF), to(#00CCFF));
+    background-image: -webkit-linear-gradient(right, #4DDBFF, #00CCFF);
+    background-image: -moz-linear-gradient(right, #4DDBFF, #00CCFF);
+    background-image: -ms-linear-gradient(right, #4DDBFF, #00CCFF);
+    background-image: -o-linear-gradient(right, #4DDBFF, #00CCFF);
+}
+
+/*setting round corners to the range */ input[type="range"].round {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+/*setting round corners to the range slider icon*/ input[type="range"].round::-webkit-slider-thumb {
+    -webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-o-border-radius: 5px;
+}
+
+/* set range from 0 - 1 horizontal as by default */ .horizontal-lowest-first
+{
+    -webkit-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    -ms-transform:rotate(0deg);
+    transform:rotate(0deg);
+}
+
+/* set range from 1 - 0 horizontal (highest first) */ .horizontal-highest-first
+{
+    -webkit-transform:rotate(180deg);
+    -moz-transform:rotate(180deg);
+    -o-transform:rotate(180deg);
+    -ms-transform:rotate(180deg);
+    transform:rotate(180deg);
+}
+
+/* set range from 0 - 1 vertically (lowest on top) */ .vertical-lowest-first
+{
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -o-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    transform:rotate(90deg);
+}
+
+/* set range from 1 - 0 vertically (highest on top) */ .vertical-heighest-first
+{
+    -webkit-transform:rotate(270deg);
+    -moz-transform:rotate(270deg);
+    -o-transform:rotate(270deg);
+    -ms-transform:rotate(270deg);
+    transform:rotate(270deg);
 }

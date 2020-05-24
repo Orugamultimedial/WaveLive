@@ -159,10 +159,15 @@
                         <source src="">
                     </audio-->  
             </div>
+            
         </div>
+        
+        <input  id="volumePREVIO" class="range horizontal-highest-first" type="range" min="5" max="10" step="0.01">
+
         <div class="DIV-MICROPHONE">
             <h3>Hablar</h3>
             <button type="button" id="microphone"></button>
+            <input  id="volume" class="range vertical-heighest-first" type="range" min="5" max="10" step="0.01">
         </div>
 
     </div>
