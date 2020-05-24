@@ -38,8 +38,8 @@
         
     <div class="PREVIO">
 
-         <div>           
-            <ul id="playlist">
+         <div >           
+            <ul id="playlist" class="playListPREVIO">
                 <?php
                 for ($i=0; $i < mysqli_num_rows($theme); $i++) {                  
                         $data = mysqli_fetch_assoc($theme);
@@ -67,13 +67,14 @@
                 }
                 ?>
                 <!--Botones de Reproduccion-->
-                <div>
-                    <button type="button" id="playPausebtn"></button>
-                    <button type="button" id="stopbtn"></button>
-                    <button type="button" id="prevbtn"></button>
-                    <button type="button" id="nextbtn"></button>
-                </div> 
+ 
             </ul>
+            <div class="playerbtn">
+                <button type="button" id="playPausebtn"></button>
+                <button type="button" id="stopbtn"></button>
+                <button type="button" id="prevbtn"></button>
+                <button type="button" id="nextbtn"></button>
+            </div>
 
             <audio id="audio" preload="metadata" tabindex="0">
                 <source src="">
@@ -82,7 +83,7 @@
             <div id="div-content-previos2">
                 <div class="CORTINA">
                         
-                    <ul id="playlist">
+                    <ul id="playlist" class="playListPREVIO2">
                         <?php
                         for ($i=0; $i < mysqli_num_rows($cortina); $i++) {                  
                                 $data = mysqli_fetch_assoc($cortina);
@@ -109,20 +110,21 @@
                         }
                         ?>
                         <!--Botones de Reproduccion-->
-                        <div>
-                            <button type="button" id="playPausebtn"></button>
-                            <button type="button" id="stopbtn"></button>
-                            <button type="button" id="prevbtn"></button>
-                            <button type="button" id="nextbtn"></button>
-                        </div> 
+
                     </ul>
+                    <div class="playerbtn">
+                        <button type="button" id="playPausebtn"></button>
+                        <button type="button" id="stopbtn"></button>
+                        <button type="button" id="prevbtn"></button>
+                        <button type="button" id="nextbtn"></button>
+                    </div> 
                         <audio id="audio" preload="metadata" tabindex="0">
                             <source src="">
                         </audio-->  
             </div>
             <div class="ARTISTICA">
                 
-                <ul id="playlist">
+                <ul id="playlist" class="playListPREVIO2">
                     <?php
                     for ($i=0; $i < mysqli_num_rows($artistica); $i++) {                  
                             $data = mysqli_fetch_assoc($artistica);
@@ -147,22 +149,22 @@
                     <?php
                     }
                     ?>
-                    <!--Botones de Reproduccion-->
-                    <div>
-                        <button type="button" id="playPausebtn"></button>
-                        <button type="button" id="stopbtn"></button>
-                        <button type="button" id="prevbtn"></button>
-                        <button type="button" id="nextbtn"></button>
-                    </div> 
+
                 </ul>
-                    <audio id="audio" preload="metadata" tabindex="0">
-                        <source src="">
-                    </audio-->  
+                <!--Botones de Reproduccion-->
+                <div class="playerbtn">
+                    <button type="button" id="playPausebtn"></button>
+                    <button type="button" id="stopbtn"></button>
+                    <button type="button" id="prevbtn"></button>
+                    <button type="button" id="nextbtn"></button>
+                </div> 
+                <audio id="audio" preload="metadata" tabindex="0">
+                    <source src="">
+                </audio-->  
             </div>
             
         </div>
-        
-        <input  id="volumePREVIO" class="range horizontal-highest-first" type="range" min="5" max="10" step="0.01">
+
 
         <div class="DIV-MICROPHONE">
             <h3>Hablar</h3>

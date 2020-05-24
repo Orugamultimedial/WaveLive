@@ -39,10 +39,61 @@ input{
     height: 580px;
     box-sizing: content-box;
     background-image: linear-gradient(to top, #060707, #001115, #001723, #001b32, #021c3f);
-    
+    margin-bottom: 30px;
 }
 
+.playListPREVIO{
+    width: 708px;
+    height: 150px;
+    margin-left: 0px;
+    margin-right: auto;
+    padding-top: 10px;
+    border-radius: 8px;
+   
+    overflow:auto;
+}
 
+.playListPREVIO li{
+    width: 100%;
+    font-size: 12px;
+}
+
+.playListPREVIO div{
+    margin-top: 15px;
+    width: 100%;
+}
+
+.playListPREVIO li button{
+border-radius: 5px;
+}
+
+.playListPREVIO2{
+    width: 340px;
+    height: 150px;
+    margin-left: 0px;
+    margin-right: auto;
+    padding-top: 15px;
+    border-radius: 8px;
+    overflow:auto;
+}
+::-webkit-scrollbar {display: none;}
+
+.playListPREVIO2 li{
+    width: 100%;
+    font-size: 12px;
+}
+
+.playListPREVIO2 div{
+    margin-top: 15px;
+}
+
+.playListPREVIO2 li button{
+border-radius: 5px;
+}
+
+.playerbtn{
+    margin-left: 40px;
+}
 
 #audio{
     background:#666;
@@ -116,7 +167,7 @@ text-decoration:none;
     height: 580px;
     float: right;
     position: relative;
-    top:-526px;
+    top:-207px;
     background-color: teal;
     text-align: center;
 }
