@@ -133,6 +133,52 @@ width: 35px;
 height: 35px;
 }
 
+/*LIVE*/
+#playPausebtnLIVE{
+    background: url(../asset/icons/pause.png);
+    width: 35px;
+    height: 35px;
+    }
+    #stopbtnLIVE{
+    background: url(../asset/icons/stop.png);
+    width: 35px;
+    height: 35px;
+    }
+    #prevbtnLIVE{
+    background: url(../asset/icons/preview.png);
+    width: 35px;
+    height: 35px;
+    }
+    #nextbtnLIVE{
+    background: url(../asset/icons/next.png);
+    width: 35px;
+    height: 35px;
+    }
+/* END LIVE*/
+
+/*CURTAIN*/
+#playPausebtnCURTAIN{
+    background: url(../asset/icons/pause.png);
+    width: 35px;
+    height: 35px;
+    }
+    #stopbtnCURTAIN{
+    background: url(../asset/icons/stop.png);
+    width: 35px;
+    height: 35px;
+    }
+    #prevbtnCURTAIN{
+    background: url(../asset/icons/preview.png);
+    width: 35px;
+    height: 35px;
+    }
+    #nextbtnCURTAIN{
+    background: url(../asset/icons/next.png);
+    width: 35px;
+    height: 35px;
+    }
+/* END CURTAIN*/
+
 a {
 text-decoration:none;
 }

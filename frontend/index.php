@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src='./functionsPREV.js'></script>
+    <script src='./functionsVIVO.js'></script>
 
     <title>WaveLive</title>
 </head>
@@ -83,7 +84,7 @@
             <div id="div-content-previos2">
                 <div class="CORTINA">
                         
-                    <ul id="playlist" class="playListPREVIO2">
+                    <ul id="playlistCURTAIN" class="playListPREVIO2">
                         <?php
                         for ($i=0; $i < mysqli_num_rows($cortina); $i++) {                  
                                 $data = mysqli_fetch_assoc($cortina);
@@ -113,12 +114,12 @@
 
                     </ul>
                     <div class="playerbtn">
-                        <button type="button" id="playPausebtn"></button>
-                        <button type="button" id="stopbtn"></button>
-                        <button type="button" id="prevbtn"></button>
-                        <button type="button" id="nextbtn"></button>
+                        <button type="button" id="playPausebtnCURTAIN" onclick="CURTAIN();"></button>
+                        <button type="button" id="stopbtnCURTAIN"></button>
+                        <button type="button" id="prevbtnCURTAIN"></button>
+                        <button type="button" id="nextbtnCURTAIN"></button>
                     </div> 
-                        <audio id="audio" preload="metadata" tabindex="0">
+                        <audio id="audioCURTAIN" preload="metadata" tabindex="0">
                             <source src="">
                         </audio-->  
             </div>
@@ -181,6 +182,15 @@
             <h3 id="vivo-text">VIVO</h3>
             <ul id="playlistLIVE"></ul>
         </div>
+        <div class="playerbtn">
+            <button type="button" id="playPausebtnLIVE" onclick="LIVE();"></button>
+            <button type="button" id="stopbtnLIVE"></button>
+            <button type="button" id="prevbtnLIVE"></button>
+            <button type="button" id="nextbtnLIVE"></button>
+        </div>
+        <audio id="audioLIVE" preload="metadata" tabindex="0">
+            <source src="">
+        </audio-->
     </div>
 
 </div>
@@ -189,4 +199,5 @@
 
 <script>
     PREV();
+    
 </script>

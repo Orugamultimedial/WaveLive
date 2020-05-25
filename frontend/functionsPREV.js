@@ -92,7 +92,67 @@ function PREV(){
   };
 
 
-  
+
+
+
+///****ENVIAR A LA LISTA VIVO****/
+
+function addVIVO(ele) {
+  //detecta el id del elemento clickeado
+  var id = ele.id;
+  var elm = document.getElementsByClassName(id);
+  var cancion = elm[0];
+  var url = cancion.getAttribute('href');
+  var name = cancion.getAttribute('name');
+  console.log(url);
+  console.log(name);
+  addElement(url, name);
+}
+
+function removeVIVO(elID){
+  //detecta el id del elemento clickeado
+  var idSong = elID.id;
+  var seVaAEliminar = document.getElementsByClassName(idSong);
+  var cancion = seVaAEliminar[0];
+  console.log(cancion);
+  cancion.remove(cancion);
+}
+
+function addElement (url, name) { 
+      // añade a la lista VIVO
+
+      // y añade contenido 
+      var listVIVO = document.getElementById('playlistLIVE');
+      var lista = document.createElement('li');
+          lista.setAttribute('class',name);
+          
+
+      listVIVO.appendChild(lista);
+      
+      var newSong = document.createElement("a");
+          newSong.setAttribute('href', url); 
+
+      var newContent = document.createTextNode(name); 
+          newSong.appendChild(newContent); //añade texto al div creado. 
+
+      var newButton = document.createElement('button');
+      
+          newButton.setAttribute('onclick','removeVIVO(this)');
+          newButton.setAttribute('value','X');
+          newButton.setAttribute('id',name);
+
+          var newContentButton = document.createTextNode('Eliminar');
+          newButton.appendChild(newContentButton); //añade texto al botón creado.
+
+      
+      lista.appendChild(newSong);
+      lista.appendChild(newButton);
+
+            
+
+  }
+
+
 
 
 }
@@ -188,4 +248,106 @@ function addElement (url, name) {
   }
 
 
+
+
+/****REPRODUCTOR CURTAIN***/
+function CURTAIN(){
+  var i = 0;
+  var audioCURTAIN = document.getElementById('audioCURTAIN');
+  var playlistCURTAIN = document.getElementById('playlistCURTAIN');
+  var tracksCURTAIN = playlistCURTAIN.getElementsByTagName('a');
+  
+
+  audioCURTAIN.volume = 0.10;
+  audioCURTAIN.play();
+ 
+
+  //Agregamos los eventos a los links que nos permitirán cambiar de canción
+  for(var trackCURTAIN in tracksCURTAIN) {
+    var linkCURTAIN = tracksCURTAIN[trackCURTAIN];
+    if(typeof linkCURTAIN === "function" || typeof linkCURTAIN === "number") continue;
+    linkCURTAIN.addEventListener('click', function(e) {
+      e.preventDefault();
+      var songCURTAIN = this.getAttribute('href');
+     runLIVE(songCURTAIN, audioCURTAIN, this);
+    });
+  }
+
+  // pasa a la siguiente canción el terminar
+  audioCURTAIN.addEventListener("ended", function siguienteCURTAIN() {
+    if(audioCURTAIN.ended === true){
+      i++;
+      var nextSongCURTAIN = tracksCURTAIN[i];
+      console.log(nextSongCURTAIN);
+      var songCURTAIN = nextSongCURTAIN.getAttribute('href');
+      runCURTAIN(songCURTAIN, audioCURTAIN, nextSongCURTAIN);
+    }
+  });
+
+
+
+  //Funcionalidad de los botones curtain
+  //play-pause
+  var playbtnCURTAIN = document.getElementById("playPausebtnCURTAIN");
+
+  playbtnCURTAIN.addEventListener("click", function playPauseCURTAIN() {
+    if (audioCURTAIN.paused) {
+      audioCURTAIN.play();
+      playbtnCURTAIN.style.background = "url(../asset/icons/pause.png)";
+      
+    } else {
+      audioCURTAIN.pause();
+      playbtnCURTAIN.style.background = "url(../asset/icons/play.png)";
+      
+    }
+  });
+
+  //stop
+  var stopbtnCURTAIN = document.getElementById("stopbtnCURTAIN");
+
+  stopbtnCURTAIN.addEventListener("click", function stopCURTAIN() {
+    audioCURTAIN.load();
+    playbtnCURTAIN.style.background = "url(../asset/icons/play.png)";
+    
+  });
+
+
+
+  //prev
+  document.getElementById("prevbtnCURTAIN").onclick = function () {
+    i--;
+    var prevCURTAIN = tracksCURTAIN[i];
+    console.log(prevCURTAIN);
+    var songCURTAIN = prevCURTAIN.getAttribute('href');
+     runCURTAIN(songCURTAIN, audioCURTAIN, prevCURTAIN);
+  };
+
+  //next
+  document.getElementById("nextbtnCURTAIN").onclick = function () {
+      i++;
+      var nextCURTAIN = tracksCURTAIN[i];
+      console.log(nextCURTAIN);
+      var songCURTAIN = nextCURTAIN.getAttribute('href');
+      runCURTAIN(songCURTAIN, audioCURTAIN, nextCURTAIN);
+  };
+}
+
+// FUNCION PARA REPRODUCIR EL AUDIO
+function runCURTAIN(songCURTAIN, audioCURTAIN, linkCURTAIN){
+      var parentCURTAIN = linkCURTAIN.parentElement;
+      //quitar el active de todos los elementos de la lista
+      var itemsCURTAIN = parentCURTAIN.parentElement.getElementsByTagName('li');
+      for(var itemCURTAIN in itemsCURTAIN) {
+        if(itemsCURTAIN[itemCURTAIN].classList)
+          itemsCURTAIN[itemCURTAIN].classList.remove("active");
+      }
+      
+      //agregar active a este elemento
+      parentCURTAIN.classList.add("active");
+      
+      //tocar la cancion
+      audioCURTAIN.src = songCURTAIN;
+      audioCURTAIN.load();
+      audioCURTAIN.play();
+}
 
